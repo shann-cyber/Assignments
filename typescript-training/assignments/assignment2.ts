@@ -40,7 +40,7 @@ let debtToIncomeRatio = 35.0;
     );
 function Loancheck
     (   
-        ConsumerName : string,
+        customerName : string,
         creditScore : number,
         income : number,
         isEmployed : boolean,
@@ -53,7 +53,7 @@ function Loancheck
              // 1. Credit Score Check
              if (creditScore > 750) 
                 {
-                console.log("Loan Approved (Excellent Credit Score)");
+                console.log(`Loan Approved as Credit Score is ${creditScore}`);
                 } 
                 else 
                     {
@@ -68,26 +68,26 @@ function Loancheck
                                             // 4. Debt-to-Income Ratio Check
                                             if (debtToIncomeRatio < 40) 
                                             {
-                                            console.log("Loan Approved");
+                                            console.log(`Loan Approved for ${customerName}`);
                                             } 
                                             else 
                                                 {
-                                                console.log("Loan Denied (High Debt-to-Income Ratio)");
+                                                console.log(`Loan Denied due to High Debt-to-Income Ratio ${debtToIncomeRatio}`);
                                                 }
 
                                     } else 
                                         {
-                                            console.log("Loan Denied (Customer is Unemployed)");
+                                            console.log(`Loan Denied due to Customer is Unemployed`);
                                         }
 
                                 } else 
                                     {
-                                        console.log("Loan Denied (Income less than $50,000)");
+                                        console.log(`Loan Denied due to Income less than $50,000`);
                                     }
 
                             } else 
                                 {
-                                    console.log("Loan Denied (Low Credit Score)");
+                                    console.log(`Loan Denied due to Low Credit Score ${creditScore}`);
                                 }
                     }
             }
